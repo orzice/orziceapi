@@ -1,0 +1,640 @@
+<style type="text/css">
+.layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+.icon {margin-right:10px;color:#1aa094;}
+.icon-cray {color:#ffb800!important;}
+.icon-blue {color:#1e9fff!important;}
+.icon-tip {color:#ff5722!important;}
+.layuimini-qiuck-module {text-align:center;margin-top: 10px}
+.layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+.layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+.welcome-module {width:100%;height:210px;}
+.panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+.panel-body {padding:10px}
+.panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+.label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+.layui-red {color:red}
+.main_btn > p {height:40px;}
+.layui-bg-number {background-color:#F8F8F8;}
+.layuimini-notice:hover {background:#f6f6f6;}
+.layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+.layuimini-notice-title,.layuimini-notice-label {
+    padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+.layuimini-notice-title {line-height:28px;font-size:14px;}
+.layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+</style>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md8">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>数据统计</div>
+                            <div class="layui-card-body">
+                                <div class="welcome-module">
+                                    <div class="layui-row layui-col-space10">
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-blue">实时</span>
+                                                        <h5>用户统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">{$res.member}</h1>
+                                                        <small>当前用户总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-cyan">实时</span>
+                                                        <h5>商品统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">{$res.goods}</h1>
+                                                        <small>当前商品总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-orange">实时</span>
+                                                        <h5>今日注册</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">{$res.list}</h1>
+                                                        <small>今日注册总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-xs6">
+                                            <div class="panel layui-bg-number">
+                                                <div class="panel-body">
+                                                    <div class="panel-title">
+                                                        <span class="label pull-right layui-bg-green">实时</span>
+                                                        <h5>订单统计</h5>
+                                                    </div>
+                                                    <div class="panel-content">
+                                                        <h1 class="no-margins">{$res.order}</h1>
+                                                        <small>当前订单总记录数</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-credit-card icon icon-blue"></i>快捷入口</div>
+                            <div class="layui-card-body">
+                                <div class="welcome-module">
+                                    <div class="layui-row layui-col-space10 layuimini-qiuck">
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('member.user/index')}" data-title="会员列表" data-icon="fa fa-list">
+                                                <i class="fa fa-list"></i>
+                                                <cite>会员列表</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('goods.home/index')}" data-title="商品管理" data-icon="fa fa-shopping-cart">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <cite>商品管理</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('order.home/index')}" data-title="订单列表" data-icon="fa fa-file-text">
+                                                <i class="fa fa-file-text"></i>
+                                                <cite>订单列表</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('page.notice/index')}" data-title="公告管理" data-icon="fa fa-dot-circle-o">
+                                                <i class="fa fa-dot-circle-o"></i>
+                                                <cite>公告管理</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('finace.uprecord/index')}" data-title="充值记录" data-icon="fa fa-calendar">
+                                                <i class="fa fa-calendar"></i>
+                                                <cite>充值记录</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('plugin.index/index')}" data-title="我的插件" data-icon="fa fa-cogs">
+                                                <i class="fa fa-cogs"></i>
+                                                <cite>我的插件</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('plugin.cloud/index')}" data-title="插件市场" data-icon="fa fa-puzzle-piece">
+                                                <i class="fa fa-puzzle-piece"></i>
+                                                <cite>插件市场</cite>
+                                            </a>
+                                        </div>
+                                        <div class="layui-col-xs3 layuimini-qiuck-module">
+                                            <a href="javascript:;" layuimini-content-href="{:__url('finace.withdrawsts/index')}" data-title="提现统计" data-icon="fa fa-area-chart">
+                                                <i class="fa fa-area-chart"></i>
+                                                <cite>提现统计</cite>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <style type="text/css">
+.now-content{
+    padding-left: 5px;
+}
+.now-update-version{
+    font-size: 28px;
+    margin-bottom: 14px;
+    position: relative;
+    color: #333;
+}
+.now-version {
+    color: #999;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.now-btn-default {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-color: #e8e9eb;
+    color: #333;
+    background-color: #fff;
+    min-width: 140px;
+    border-radius: 0;
+    text-decoration: none;
+}
+.now-btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.now-icon{
+    text-align: center;
+    flex: 0 1 240px;
+    /*border-right: 1px solid #e8e9eb;*/
+}
+.now-icon img{
+    vertical-align: middle;
+    width: 80px;
+}
+.now-update-statistics{
+    display: flex;
+    align-items: center;
+    /*padding: 6px 20px 20px;*/
+    height: 232px;
+}
+
+                </style>
+                <div class="layui-row layui-col-space15">
+
+                {eq name="$cld['state']" value="1"}
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>系统更新</div>
+                            <div class="layui-card-body layui-text">
+                                <div class="panel-body">
+
+                                    <div class="now-update-statistics">
+                                        <div class="now-icon">
+                                            <img src="/static/common/images/update-icon.png" alt="">
+                                        </div>
+                                        <div class="now-content">
+                                            <div class="now-update-version">
+                                                v{$version}          
+                                            </div>
+                                            <div class="now-version" style="margin-bottom: 0;">版本号：<b>{$release}</b></div>
+                                            <div class="now-version" >当前版本即最新版本，无须升级</div>
+                                            <div class="">
+                                                <!-- <a href="{:__url('plugin.cloud/update')}" class="now-btn-default" >检测新版本</a> -->
+                                                <a href="javascript:;" layuimini-content-href="{:__url('plugin.cloud/update')}" data-title="版本升级" data-icon="fa fa-puzzle-piece" class="now-btn-default" >检测新版本</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                {/eq}
+                {eq name="$cld['state']" value="2"}
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header" style="color: #f00;"><i class="fa fa-warning icon  icon-tip"></i>系统更新 - 【 {$cloud.version} / {$cloud.release} 】</div>
+                            <div class="layui-card-body layui-text">
+                                <div class="panel-body">
+
+                                    <div class="now-update-statistics">
+                                        <div class="now-icon">
+                                            <img src="/static/common/images/update-icon.png" alt="">
+                                        </div>
+                                        <div class="now-content">
+                                            <div class="now-update-version" style="color: #f00;">
+                                                v{$version} 
+                                            </div>
+                                            <div class="now-version" style="margin-bottom: 0;">版本号：<b>{$release}</b></div>
+                                            <div class="now-version" style="margin-bottom: 0;" title="更新内容：{$cloud.description}">新版本：<b style="color: #f00;">{$cloud.release}</b></div>
+                                            <div class="now-version" style="color: #f00;">发现新版本！请立即更新！</div>
+                                            <div class="" title="更新内容：{$cloud.description}">
+                                                <!-- <a href="{:__url('plugin.cloud/update')}" class="now-btn-default" >立即更新</a> -->
+                                                <a href="javascript:;" layuimini-content-href="{:__url('plugin.cloud/update')}" data-title="版本升级" data-icon="fa fa-puzzle-piece" class="now-btn-default" >立即更新</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                {/eq}
+                {eq name="$cld['state']" value="0"}
+                    <div class="layui-col-md6">
+
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>系统更新</div>
+                            <div class="layui-card-body layui-text">
+                                <div class="panel-body">
+
+                                    <div class="now-update-statistics">
+                                        <div class="now-icon">
+                                            <img src="/static/common/images/update-icon.png" alt="">
+                                        </div>
+                                        <div class="now-content">
+                                            <div class="now-update-version" style="color: #f00;">
+                                                云服务不可用
+                                            </div>
+                                            <div class="now-version" style="margin-bottom: 0;">本地版本号：<b>{$release}</b></div>
+                                            <div class="now-version" style="color: #f00;">提示：{$cld.error}</div>
+                                            <div class="">
+                                                <a href="https://www.hasog.com" target="_blank" class="now-btn-default" style="color: #f00;">联系技术支持</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/eq}
+
+                    <div class="layui-col-md6">
+
+                        <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
+                    <div class="layui-card-body layui-text">
+
+                     {foreach $cloudnot as $key=>$vo }
+                                   
+                        <div class="layuimini-notice" data-src="http://www.bilibili.com">
+                            <div class="layuimini-notice-title">{$vo.title}</div>
+                            <div class="layuimini-notice-extra">{$vo.create_time}</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                {$vo.notice|raw}
+                            </div>
+                        </div>
+
+                    {/foreach}
+
+                    </div>
+                </div>
+                    </div>
+
+                </div>
+
+
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>余额排行</div>
+                            <div class="layui-card-body layui-text">
+                                <table class="layui-table">
+                                    <colgroup>
+                                        <col width="180">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td>排名</td>
+                                        <td>用户ID</td>
+                                        <td>
+                                            余额
+                                        </td>
+                                    </tr>
+                                    {foreach $member as $key=>$vo }
+                                    <tr>
+                                        <td>{$vo.ph}</td>
+                                        <td>{$vo.id}</td>
+                                        <td>{$vo.credit2}</td>
+                                    </tr>
+                                    {/foreach}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-col-md6">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-credit-card icon icon-blue"></i>订单排行</div>
+                            <div class="layui-card-body layui-text">
+                                <table class="layui-table">
+                                    <colgroup>
+                                        <col width="180">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                    <tr>
+                                        <td>排名</td>
+                                        <td>用户ID</td>
+                                        <td>
+                                            订单总数
+                                        </td>
+                                    </tr>
+                                    {foreach $list as $key=>$vo }
+                                    <tr>
+                                        <td>{$vo.ph}</td>
+                                        <td>{$vo.id}</td>
+                                        <td>{$vo.count}</td>
+                                    </tr>
+                                    {/foreach}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="layui-col-md4">
+
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>提醒</div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                       如遇到任何系统错误，请联系我们！我们将会在第一时间解决！<a target="_blank" href="https://cloud.hasog.com/toutiao/article/9.html">点我获取联系方式</a>
+                    </div>
+                </div>
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>常见疑问</div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                       <table class="layui-table">
+                            <colgroup>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td>1..HaSog幻神商城开发计划</td>
+                                <td>
+                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/article/8.html"> 点我了解详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.幻神云平台怎么注册？</td>
+                                <td>
+                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/article/2.html"> 点我了解详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3.HaSog幻神商城收费么？可以商用么？</td>
+                                <td>
+                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/article/7.html"> 点我了解详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4.系统可以做什么？有已经发布的案例么？</td>
+                                <td>
+                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/?pid=1"> 点我了解详情</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5.我不懂商业模式，有已经使用现成的么？</td>
+                                <td>
+                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/?pid=2"> 点我了解详情</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-fire icon"></i>版本信息</div>
+                    <div class="layui-card-body layui-text">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="180">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td>框架名称</td>
+                                <td>
+                                    HaSog幻神商城
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HaSog 版本</td>
+                                <td>v{$version} / {$release}</td>
+                            </tr>
+                            <tr>
+                                <td>服务器系统及 PHP</td>
+                                <td>{$serverinfo}</td>
+                            </tr>
+                            <tr>
+                                <td>服务器软件</td>
+                                <td>{$serversoft}</td>
+                            </tr>
+                            <tr>
+                                <td>服务器 MySQL 版本</td>
+                                <td>{$dbversion}</td>
+                            </tr>
+                            <tr>
+                                <td>官网</td>
+                                <td>
+                                    <a href="{$CloudUrl}" target="_blank">幻神云</a>
+                                    /
+                                   <a href="https://cloud.hasog.com/toutiao" target="_blank">幻神头条</a>
+                                    /
+                                   <a href="https://www.hasog.com" target="_blank">幻神科技</a>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>开源地址</td>
+                                <td>
+                                    <a href="https://gitee.com/orzice/hasog" target="_blank">Gitee</a>
+                                    /
+                                   <a href="https://github.com/orzice/hasog" target="_blank">Github</a>
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>联系我们</td>
+                                <td>
+                                   <a href="https://www.hasog.com" target="_blank">https://oauth.acgice.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>技术支持</td>
+                                <td>
+                                <a href="https://www.hasog.com" target="_blank">河南幻神科技</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>QQ交流群</td>
+                                <td>
+                                   372193289
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>作者邮箱</td>
+                                <td>
+                                   1073519986@qq.com
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+ 
+{if condition="env('hasog.is_demo', false) == false"}
+{if condition="env('hasog.is_saas', false) == false"}
+
+{eq name=":Sessions('id')" value="1"}
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-fire icon"></i>配置信息 (务必妥善保存)</div>
+                    <div class="layui-card-body layui-text">
+                        <table class="layui-table">
+                            <colgroup>
+                                <col width="180">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td>后台管理员加密密钥</td>
+                                <td>
+                                   {$pwSDK}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>用户加密密钥</td>
+                                <td>
+                                   {$userPW}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>后台加密地址</td>
+                                <td>
+                                   {$Admin}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>软件唯一ID（云平台）</td>
+                                <td>
+                                   {$uniqueid}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>服务器公网IP</td>
+                                <td>
+                                   {$ServerIp}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+{/eq}
+{/if}
+{/if}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    require(["jquery", "easy-admin", "miniAdmin", "miniTab"], function ($, ea, miniAdmin, miniTab) {
+
+        /**
+         * 查看公告信息
+         **/
+        $('body').on('click', '.layuimini-notice', function () {
+            var src = $(this).attr('data-src');
+
+            var title = $(this).children('.layuimini-notice-title').text(),
+                noticeTime = $(this).children('.layuimini-notice-extra').text(),
+                content = $(this).children('.layuimini-notice-content').html();
+            var html = '<div style="padding:15px 20px; text-align:justify; line-height: 22px;border-bottom:1px solid #e2e2e2;background-color: #2f4056;color: #ffffff">\n' +
+                '<div style="text-align: center;margin-bottom: 20px;font-weight: bold;border-bottom:1px solid #718fb5;padding-bottom: 5px"><h4 class="text-danger">' + title + '</h4></div>\n' +
+                '<div style="font-size: 12px">' + content + '</div>\n' +
+                '</div>\n';
+
+            if (src !== undefined) {
+                var btn = ['查看', '取消'];
+            }else{
+                 var btn = ['取消'];
+            }
+            var btn = ['取消'];
+            parent.layer.open({
+                type: 1,
+                title: '系统公告'+'<span style="float: right;right: 1px;font-size: 12px;color: #b1b3b9;margin-top: 1px">'+noticeTime+'</span>',
+                area: '600px;',
+                shade: 0.8,
+                id: 'layuimini-notice',
+                btn: btn,
+                btnAlign: 'c',
+                moveType: 1,
+                content:html,
+                success: function (layero) {
+                    // var btn = layero.find('.layui-layer-btn');
+                    // btn.find('.layui-layer-btn0').attr({
+                    //     href: src,
+                    //     target: '_blank'
+                    // });
+                }
+            });
+        });
+        miniTab.listen();
+    });
+</script>
+</body>

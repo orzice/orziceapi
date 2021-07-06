@@ -1,0 +1,60 @@
+{
+    "name": "orzice/orziceapi",
+    "description": "OrziceApi",
+    "keywords": [
+        "orzice orziceApi"
+    ],
+    "homepage": "https://i.orzice.com",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Orzice",
+            "email": "1073519986@qq.com"
+        }       
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "orzice/orzicelib": "^1.0.1",
+        "topthink/framework": "^6.0.0",
+        "topthink/think-orm": "^2.0",
+        "topthink/think-multi-app": "^1.0",
+        "topthink/think-helper": "^3.1",
+        "topthink/think-captcha": "^3.0",
+        "topthink/think-view": "^1.0",
+        "doctrine/annotations": "^1.11",
+        "jianyan74/php-excel": "^1.0",
+        "topthink/think-queue": "^3.0",
+        "phpoffice/phpspreadsheet": "^1.15",
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2",
+        "topthink/think-trace":"^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app",
+            "Orzice\\plugin\\": "plugin/",
+            "HaSog\\plugin\\": "plugin/",
+            "AcShop\\plugin\\": "plugin/"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}

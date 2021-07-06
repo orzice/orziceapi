@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/runtime
+/localhost.sql
+/vendor
+/资料
+/config/database.php
+*.log
+*.sql
+*.zip

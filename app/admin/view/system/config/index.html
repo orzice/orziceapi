@@ -1,0 +1,62 @@
+<div class="layuimini-container">
+    <div class="layuimini-main" id="app">
+
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">网站设置</li>
+                <li>首页设置</li>>
+                <li>上传配置</li>
+                <li>短信配置</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    {include file="system/config/site" /}
+                </div>
+                <div class="layui-tab-item">
+                    {include file="system/config/shows" /}
+                </div>
+                <div class="layui-tab-item">
+                    {include file="system/config/upload" /}
+                </div>
+                <div class="layui-tab-item">
+                    {include file="system/config/sms" /}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+
+require(["jquery", "easy-admin", "vue"], function ($, ea, Vue) {
+
+    var form = layui.form;
+
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            upload_type: upload_type,
+            sms_new_type: sms_new_type,
+            sms_shows: sms_shows,
+            uploadfile_http: uploadfile_http,
+        }
+    });
+
+    form.on("radio(upload_type)", function (data) {
+        app.upload_type = this.value;
+    });
+    form.on("radio(sms_new_type)", function (data) {
+        app.sms_new_type = this.value;
+    });
+    form.on("radio(sms_shows)", function (data) {
+        app.sms_shows = this.value;
+    });
+    form.on("radio(uploadfile_http)", function (data) {
+        app.uploadfile_http = this.value;
+    });
+
+    ea.listen();
+    
+});
+</script>
