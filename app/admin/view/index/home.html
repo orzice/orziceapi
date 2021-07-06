@@ -41,7 +41,7 @@
                                                         <h5>用户统计</h5>
                                                     </div>
                                                     <div class="panel-content">
-                                                        <h1 class="no-margins">{$res.member}</h1>
+                                                        <h1 class="no-margins">0</h1>
                                                         <small>当前用户总记录数</small>
                                                     </div>
                                                 </div>
@@ -55,7 +55,7 @@
                                                         <h5>商品统计</h5>
                                                     </div>
                                                     <div class="panel-content">
-                                                        <h1 class="no-margins">{$res.goods}</h1>
+                                                        <h1 class="no-margins">0</h1>
                                                         <small>当前商品总记录数</small>
                                                     </div>
                                                 </div>
@@ -69,7 +69,7 @@
                                                         <h5>今日注册</h5>
                                                     </div>
                                                     <div class="panel-content">
-                                                        <h1 class="no-margins">{$res.list}</h1>
+                                                        <h1 class="no-margins">0</h1>
                                                         <small>今日注册总记录数</small>
                                                     </div>
                                                 </div>
@@ -83,7 +83,7 @@
                                                         <h5>订单统计</h5>
                                                     </div>
                                                     <div class="panel-content">
-                                                        <h1 class="no-margins">{$res.order}</h1>
+                                                        <h1 class="no-margins">0</h1>
                                                         <small>当前订单总记录数</small>
                                                     </div>
                                                 </div>
@@ -220,7 +220,6 @@
                 </style>
                 <div class="layui-row layui-col-space15">
 
-                {eq name="$cld['state']" value="1"}
                     <div class="layui-col-md6">
                         <div class="layui-card">
                             <div class="layui-card-header"><i class="fa fa-warning icon"></i>系统更新</div>
@@ -233,9 +232,9 @@
                                         </div>
                                         <div class="now-content">
                                             <div class="now-update-version">
-                                                v{$version}          
+                                                v11111      
                                             </div>
-                                            <div class="now-version" style="margin-bottom: 0;">版本号：<b>{$release}</b></div>
+                                            <div class="now-version" style="margin-bottom: 0;">版本号：<b>1111</b></div>
                                             <div class="now-version" >当前版本即最新版本，无须升级</div>
                                             <div class="">
                                                 <!-- <a href="{:__url('plugin.cloud/update')}" class="now-btn-default" >检测新版本</a> -->
@@ -249,67 +248,6 @@
                         </div>
 
                     </div>
-                {/eq}
-                {eq name="$cld['state']" value="2"}
-                    <div class="layui-col-md6">
-                        <div class="layui-card">
-                            <div class="layui-card-header" style="color: #f00;"><i class="fa fa-warning icon  icon-tip"></i>系统更新 - 【 {$cloud.version} / {$cloud.release} 】</div>
-                            <div class="layui-card-body layui-text">
-                                <div class="panel-body">
-
-                                    <div class="now-update-statistics">
-                                        <div class="now-icon">
-                                            <img src="/static/common/images/update-icon.png" alt="">
-                                        </div>
-                                        <div class="now-content">
-                                            <div class="now-update-version" style="color: #f00;">
-                                                v{$version} 
-                                            </div>
-                                            <div class="now-version" style="margin-bottom: 0;">版本号：<b>{$release}</b></div>
-                                            <div class="now-version" style="margin-bottom: 0;" title="更新内容：{$cloud.description}">新版本：<b style="color: #f00;">{$cloud.release}</b></div>
-                                            <div class="now-version" style="color: #f00;">发现新版本！请立即更新！</div>
-                                            <div class="" title="更新内容：{$cloud.description}">
-                                                <!-- <a href="{:__url('plugin.cloud/update')}" class="now-btn-default" >立即更新</a> -->
-                                                <a href="javascript:;" layuimini-content-href="{:__url('plugin.cloud/update')}" data-title="版本升级" data-icon="fa fa-puzzle-piece" class="now-btn-default" >立即更新</a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
-                {/eq}
-                {eq name="$cld['state']" value="0"}
-                    <div class="layui-col-md6">
-
-                        <div class="layui-card">
-                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>系统更新</div>
-                            <div class="layui-card-body layui-text">
-                                <div class="panel-body">
-
-                                    <div class="now-update-statistics">
-                                        <div class="now-icon">
-                                            <img src="/static/common/images/update-icon.png" alt="">
-                                        </div>
-                                        <div class="now-content">
-                                            <div class="now-update-version" style="color: #f00;">
-                                                云服务不可用
-                                            </div>
-                                            <div class="now-version" style="margin-bottom: 0;">本地版本号：<b>{$release}</b></div>
-                                            <div class="now-version" style="color: #f00;">提示：{$cld.error}</div>
-                                            <div class="">
-                                                <a href="https://www.hasog.com" target="_blank" class="now-btn-default" style="color: #f00;">联系技术支持</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {/eq}
 
                     <div class="layui-col-md6">
 
@@ -317,17 +255,14 @@
                     <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
                     <div class="layui-card-body layui-text">
 
-                     {foreach $cloudnot as $key=>$vo }
                                    
                         <div class="layuimini-notice" data-src="http://www.bilibili.com">
-                            <div class="layuimini-notice-title">{$vo.title}</div>
-                            <div class="layuimini-notice-extra">{$vo.create_time}</div>
+                            <div class="layuimini-notice-title">33333</div>
+                            <div class="layuimini-notice-extra">1</div>
                             <div class="layuimini-notice-content layui-hide">
-                                {$vo.notice|raw}
+                               2333
                             </div>
                         </div>
-
-                    {/foreach}
 
                     </div>
                 </div>
@@ -335,71 +270,6 @@
 
                 </div>
 
-
-                <div class="layui-row layui-col-space15">
-                    <div class="layui-col-md6">
-                        <div class="layui-card">
-                            <div class="layui-card-header"><i class="fa fa-warning icon"></i>余额排行</div>
-                            <div class="layui-card-body layui-text">
-                                <table class="layui-table">
-                                    <colgroup>
-                                        <col width="180">
-                                        <col>
-                                    </colgroup>
-                                    <tbody>
-                                    <tr>
-                                        <td>排名</td>
-                                        <td>用户ID</td>
-                                        <td>
-                                            余额
-                                        </td>
-                                    </tr>
-                                    {foreach $member as $key=>$vo }
-                                    <tr>
-                                        <td>{$vo.ph}</td>
-                                        <td>{$vo.id}</td>
-                                        <td>{$vo.credit2}</td>
-                                    </tr>
-                                    {/foreach}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="layui-col-md6">
-                        <div class="layui-card">
-                            <div class="layui-card-header"><i class="fa fa-credit-card icon icon-blue"></i>订单排行</div>
-                            <div class="layui-card-body layui-text">
-                                <table class="layui-table">
-                                    <colgroup>
-                                        <col width="180">
-                                        <col>
-                                    </colgroup>
-                                    <tbody>
-                                    <tr>
-                                        <td>排名</td>
-                                        <td>用户ID</td>
-                                        <td>
-                                            订单总数
-                                        </td>
-                                    </tr>
-                                    {foreach $list as $key=>$vo }
-                                    <tr>
-                                        <td>{$vo.ph}</td>
-                                        <td>{$vo.id}</td>
-                                        <td>{$vo.count}</td>
-                                    </tr>
-                                    {/foreach}
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-                    
-                </div>
 
             </div>
 
@@ -408,7 +278,7 @@
                 <div class="layui-card">
                     <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>提醒</div>
                     <div class="layui-card-body layui-text layadmin-text">
-                       如遇到任何系统错误，请联系我们！我们将会在第一时间解决！<a target="_blank" href="https://cloud.hasog.com/toutiao/article/9.html">点我获取联系方式</a>
+                       如遇到任何系统错误，请联系我们！我们将会在第一时间解决！<a target="_blank" href="https://github.com/orzice/orziceapi">点我获取联系方式</a>
                     </div>
                 </div>
                 <div class="layui-card">
@@ -421,35 +291,18 @@
                             </colgroup>
                             <tbody>
                             <tr>
-                                <td>1..HaSog幻神商城开发计划</td>
+                                <td>1.测试解决1</td>
                                 <td>
-                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/article/8.html"> 点我了解详情</a>
+                                    <a target="_blank" href="https://github.com/orzice/orziceapi"> 点我了解详情</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>2.幻神云平台怎么注册？</td>
+                                <td>2.测试解决2</td>
                                 <td>
-                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/article/2.html"> 点我了解详情</a>
+                                    <a target="_blank" href="https://github.com/orzice/orziceapi"> 点我了解详情</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>3.HaSog幻神商城收费么？可以商用么？</td>
-                                <td>
-                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/article/7.html"> 点我了解详情</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4.系统可以做什么？有已经发布的案例么？</td>
-                                <td>
-                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/?pid=1"> 点我了解详情</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5.我不懂商业模式，有已经使用现成的么？</td>
-                                <td>
-                                    <a target="_blank" href="https://cloud.hasog.com/toutiao/?pid=2"> 点我了解详情</a>
-                                </td>
-                            </tr>
+                            
                             </tbody>
                         </table>
                     </div>
@@ -467,11 +320,11 @@
                             <tr>
                                 <td>框架名称</td>
                                 <td>
-                                    HaSog幻神商城
+                                    OrziceApi
                                 </td>
                             </tr>
                             <tr>
-                                <td>HaSog 版本</td>
+                                <td>OrziceApi 版本</td>
                                 <td>v{$version} / {$release}</td>
                             </tr>
                             <tr>
@@ -487,41 +340,12 @@
                                 <td>{$dbversion}</td>
                             </tr>
                             <tr>
-                                <td>官网</td>
-                                <td>
-                                    <a href="{$CloudUrl}" target="_blank">幻神云</a>
-                                    /
-                                   <a href="https://cloud.hasog.com/toutiao" target="_blank">幻神头条</a>
-                                    /
-                                   <a href="https://www.hasog.com" target="_blank">幻神科技</a>
-                                   
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>开源地址</td>
                                 <td>
-                                    <a href="https://gitee.com/orzice/hasog" target="_blank">Gitee</a>
+                                    <a href="https://gitee.com/orzice/orziceapi" target="_blank">Gitee</a>
                                     /
-                                   <a href="https://github.com/orzice/hasog" target="_blank">Github</a>
+                                   <a href="https://github.com/orzice/orziceapi" target="_blank">Github</a>
                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>联系我们</td>
-                                <td>
-                                   <a href="https://www.hasog.com" target="_blank">https://oauth.acgice.com</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>技术支持</td>
-                                <td>
-                                <a href="https://www.hasog.com" target="_blank">河南幻神科技</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>QQ交流群</td>
-                                <td>
-                                   372193289
                                 </td>
                             </tr>
                             <tr>
@@ -536,8 +360,8 @@
                 </div>
 
  
-{if condition="env('hasog.is_demo', false) == false"}
-{if condition="env('hasog.is_saas', false) == false"}
+{if condition="env('orzice.is_demo', false) == false"}
+{if condition="env('orzice.is_saas', false) == false"}
 
 {eq name=":Sessions('id')" value="1"}
                 <div class="layui-card">

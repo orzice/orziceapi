@@ -15,7 +15,7 @@ return [
     // 开启应用快速访问
     'app_express'      => true,
     // 默认应用
-    'default_app'      => 'home',
+    'default_app'      => 'api',
     // 默认时区
     'default_timezone' => 'Asia/Shanghai',
 

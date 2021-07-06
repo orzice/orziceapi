@@ -8,16 +8,27 @@
 // +----------------------------------------------------------------------
 // | github: https://github.com/orzice
 // +----------------------------------------------------------------------
-// | DateTime: 2021-07-06 17:03:22
+// | DateTime: 2021-07-06 16:50:23
 // +----------------------------------------------------------------------
 
-namespace app\common\model;
+declare (strict_types = 1);
 
+namespace app;
 
-use app\common\model\TimeModel;
+use think\Service;
 
-class Plugins extends TimeModel
+/**
+ * 应用服务类
+ */
+class AppService extends Service
 {
+    public function register()
+    {
+        // 服务注册
+    }
 
-
+    public function boot()
+    {
+        // 服务启动
+    }
 }

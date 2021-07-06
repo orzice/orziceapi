@@ -19,13 +19,13 @@ return [
     // Session配置
     'SessionName'         => 'orzice_api:',
     // 后台管理员密码加密
-    'pwSDK'         => '',
+    'pwSDK'         => env('orziceapi.pwSDK', ''),
     // 前台用户密码加密
-    'userPW'         => '',
+    'userPW'         => env('orziceapi.userPW', ''),
     // 云平台配置
     'CloudUrl'         => 'https://cloud.orzice.com',
-    //  后台访问目录
-    'Admin'         => '',
+    //  后台访问目录 可以进行更改！
+    'Admin'         => 'admin',
     //  唯一ID 勿动
     'uniqueid'         => '',
     //  服务器公网IP

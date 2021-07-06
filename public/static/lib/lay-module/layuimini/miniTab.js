@@ -28,12 +28,6 @@ define(["jquery"], function ($) {
             miniTab.listenRoll();
             miniTab.listenSwitch(options);
             miniTab.listenHash(options);
-            miniTab.createplus({
-                tabId: 'toutiao',
-                href: 'https://cloud.hasog.com/toutiao',
-                title: '幻神头条',
-                isIframe: true,
-            });
         },
 
         /**

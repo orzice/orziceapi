@@ -1,23 +1,20 @@
 <?php
+
 // +----------------------------------------------------------------------
-// | Author: Orzice(小涛)
+// | EasyAdmin
 // +----------------------------------------------------------------------
-// | 联系我: https://i.orzice.com
+// | PHP交流群: 763822524
 // +----------------------------------------------------------------------
-// | gitee: https://gitee.com/orzice
+// | 开源协议  https://mit-license.org 
 // +----------------------------------------------------------------------
-// | github: https://github.com/orzice
-// +----------------------------------------------------------------------
-// | DateTime: 2021-07-06 17:03:22
+// | github开源项目：https://github.com/zhongshaofa/EasyAdmin
 // +----------------------------------------------------------------------
 
-namespace app\common\model;
+namespace EasyAdmin\upload\interfaces;
 
-
-use app\common\model\TimeModel;
-
-class Plugins extends TimeModel
+interface OssDriver
 {
 
+    public function save($objectName,$filePath);
 
 }

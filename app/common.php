@@ -350,7 +350,6 @@ if (!function_exists('__url')) {
             $url = str_replace('/admin/', '/'.config_plus("orzice.Admin").'/', $url);
         }
         return $url;
-        // return url($url, $vars, $suffix, $domain)->build();
     }
 }
 if (!function_exists('__aurl')) {
