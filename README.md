@@ -1,14 +1,18 @@
 <h1 align="center">OrziceApi</h1>
 
 <p align="center">
-基于HaSog框架独立出的高扩展和安全的API后台管理框架
+基于HaSog独立出的高扩展和安全的API后台快速开发框架
 </p>
 
 
 ## 项目介绍
 
 基于HaSog框架（ThinkPHP6.0 + layui）独立出的高扩展和高安全的API后台管理系统。
+
 后台基于EasyAdmin，对其进行大幅度优化，且附带了自己独特的功能。
+
+我们的愿望是可以项目可以复用且快速开发。
+
 
 ## 代码仓库
 
@@ -53,3 +57,41 @@
    * 一个配置项切换静态资源（oss/本地）
 * 上传文件记录管理
 * 后台路径自定义，防止别人找到对应的后台地址
+
+
+
+## 他们在用
+
+
+* 幻神云平台：https://cloud.hasog.com
+
+* 幻神头条：https://cloud.hasog.com/toutiao/
+
+* 幻神SAAS系统：https://saas.hasog.com
+
+
+## 特别感谢
+
+以下项目排名不分先后
+
+* Hasog：[https://github.com/orzice/hasog](https://github.com/orzice/hasog)
+
+* OrziceLib：[https://github.com/orzice/orzicelib](https://github.com/orzice/orzicelib)
+
+* EasyAdmin：[https://github.com/zhongshaofa/easyadmin](https://github.com/zhongshaofa/easyadmin)
+
+* ThinkPHP：[https://github.com/top-think/framework](https://github.com/top-think/framework)
+
+* Layuimini：[https://github.com/zhongshaofa/layuimini](https://github.com/zhongshaofa/layuimini)
+
+* Annotations：[https://github.com/doctrine/annotations](https://github.com/doctrine/annotations)
+
+* Layui：[https://github.com/sentsin/layui](https://github.com/sentsin/layui)
+
+* Jquery：[https://github.com/jquery/jquery](https://github.com/jquery/jquery)
+
+* RequireJs：[https://github.com/requirejs/requirejs](https://github.com/requirejs/requirejs)
+
+* CKEditor：[https://github.com/ckeditor/ckeditor4](https://github.com/ckeditor/ckeditor4)
+
+* Echarts：[https://github.com/apache/incubator-echarts](https://github.com/apache/incubator-echarts)

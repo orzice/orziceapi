@@ -47,13 +47,7 @@ class ApiController extends BaseController
      */
     public function MemberId()
     {
-    	$member_id = Sessions("member_id");
-    	if (empty($member_id)) {
-    		// return api_return(0,'请先登录账号', 'login','login');
-    		return false;
-    	}
-        return $member_id;
-//        return 1;
+    	// return api_return(0,'请先登录账号', 'login','login');
     }
     /**
      * 获取用户是否登录 [插件API专用]
@@ -61,12 +55,7 @@ class ApiController extends BaseController
      */
     public function PluginMemberId()
     {
-    	$member_id = Sessions("member_id");
-    	if (empty($member_id)) {
-    		return api_return(0,'请先登录账号', 'login','login');
-    		// return false;
-    	}
-        return $member_id;
+    	return api_return(0,'请先登录账号', 'login','login');
     }
     /**
      * 延迟 API
@@ -119,7 +108,6 @@ class ApiController extends BaseController
         try {
             parent::validate($data, $validate, $message, $batch);
         } catch (\Exception $e) {
-            //$this->error($e->getMessage());
 			return $e->getMessage();
         }
         return true;
@@ -166,12 +154,6 @@ class ApiController extends BaseController
 	     */
 	    protected function success($msg = '', $data = '', $url = null, $wait = 3, array $header = [])
 	    {
-	        // if (is_null($url) && isset($_SERVER["HTTP_REFERER"])) {
-	        //    zuo $url = $_SERVER["HTTP_REFERER"];
-	        // } elseif ($url) {
-	        //     $url = (strpos($url, '://') || 0 === strpos($url, '/')) ? $url : app('route')->buildUrl($url)->__toString();
-	        // }
-	
 	        $result = [
 	            'code' => 1,
 	            'msg'  => $msg,
@@ -183,7 +165,6 @@ class ApiController extends BaseController
 	        $type = $type = $this->getResponseType();
 	        if ($type == 'html') {
                 $response = json($result);
-//                $response = view(app('config')->get('app.dispatch_success_tmpl'), $result);
 	        } elseif ($type == 'json') {
 	            $response = json($result);
 	        }
@@ -203,12 +184,6 @@ class ApiController extends BaseController
 	     */
 	    protected function error($msg = '', $data = '', $url = null, $wait = 3, array $header = [])
 	    {
-	        // if (is_null($url)) {
-	        //     $url = request()->isAjax() ? '' : 'javascript:history.back(-1);';
-	        // } elseif ($url) {
-	        //     $url = (strpos($url, '://') || 0 === strpos($url, '/')) ? $url : app('route')->buildUrl($url)->__toString();
-	        // }
-	
 	        $type   = $this->getResponseType();
 	        $result = [
 	            'code' => 0,
@@ -219,7 +194,6 @@ class ApiController extends BaseController
 	        ];
 	        if ($type == 'html') {
 	            $response = json($result);
-	            //$response = view(app('config')->get('app.dispatch_error_tmpl'), $result);
 	        } elseif ($type == 'json') {
 	            $response = json($result);
 	        }

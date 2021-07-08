@@ -123,17 +123,3 @@ if (!function_exists('random')) {
         return $hash;
     }
 }
-/*
- * 生成一个随机订单号：如果需要唯一性，请自己验证重复调用
- *
- * @params string $prefix 标示 SN RV
- * @params bool $numeric 是否为纯数字
- *
- * @return mixed
- * @Author yitian */
-if (!function_exists('createNo')) {
-    function createNo($prefix, $length = 6, $numeric = FALSE)
-    {
-        return $prefix . date('YmdHis') . random($length, $numeric);
-    }
-}
