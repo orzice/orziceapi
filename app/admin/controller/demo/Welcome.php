@@ -42,5 +42,13 @@ class Welcome extends AdminController
     {
         return $this->fetch();
     }
+    public function _404()
+    {
+        return $this->fetch();
+    }
+    public function form()
+    {
+        return $this->fetch();
+    }
 
 }
