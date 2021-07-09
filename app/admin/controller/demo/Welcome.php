@@ -50,5 +50,20 @@ class Welcome extends AdminController
     {
         return $this->fetch();
     }
-
+    public function icon()
+    {
+        return $this->fetch();
+    }
+    public function icon_picker()
+    {
+        return $this->fetch();
+    }
+    public function color()
+    {
+        return $this->fetch();
+    }
+    public function table_select()
+    {
+        return $this->fetch();
+    }
 }
